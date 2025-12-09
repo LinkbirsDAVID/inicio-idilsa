@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>IDILSA - Innovación en Lubricación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #003366; /* Azul rey para el texto */
+            background-color: #ffffff; /* Fondo blanco */
+            text-align: center;
+            overflow-x: hidden; /* Evitar el desplazamiento horizontal */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
+        }
+
+        /* Estilo para el contenedor principal */
+        .container {
+            width: 100%;
+            max-width: 100%; /* Aseguramos que no haya desplazamiento lateral */
+            padding: 0;
+        }
+
+        /* Encabezado */
+        .header {
+            background-color: #003366;
+            padding: 40px 10px;
+            color: white;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .logo {
+            width: 50%;
+            animation: pulse 1s infinite alternate;
+        }
+
+        /* Sección Principal */
+        .main-section {
+            background: #f0f0f0;
+            padding: 50px 10px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .main-section h2 {
+            font-size: 2em;
+            color: #003366;
+            margin: 0;
+        }
+
+        /* Sección de destacados */
+        .featured-section {
+            padding: 40px 0;
+            background-color: #ffffff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .featured-section h3 {
+            font-size: 2em;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .featured-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Permite que las tarjetas se ajusten en móviles */
+        }
+
+        .card {
+            background: #f0f0f0;
+            width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Sección de Historia */
+        .history-section {
+            background-color: #003366;
+            color: white;
+            padding: 50px 10px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap; /* Asegura que los elementos no se desborden */
+            gap: 10px;
+        }
+
+        .timeline .year {
+            background-color: #00509E;
+            padding: 10px 20px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .history-text {
+            font-size: 1.2em;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        /* Sección de servicios */
+        .services-section {
+            padding: 50px 10px;
+            background-color: #f0f0f0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: #ffffff;
+            width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Reconocimientos */
+        .recognitions-section {
+            padding: 40px 0;
+            background-color: #003366;
+            color: white;
+        }
+
+        .recognitions-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .recognition-card {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .recognition-card img {
+            width: 100%;
+            height: 200px; /* Ajusta la altura de la imagen */
+            object-fit: contain; /* Ajusta la imagen sin deformarla */
+            border-radius: 8px;
+        }
+
+        .contact-section {
+            padding: 50px 10px;
+            background-color: #ffffff;
+            text-align: left;
+        }
+
+        .contact-info {
+            font-size: 1.2em;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Encabezado -->
+    <div class="header">
+        <a href="https://www.idilsalubricacion.com/" target="_blank">
+            <img src="https://i.ibb.co/9pYgYx0/logo-1ik4fcne.jpg" alt="Logo" class="logo">
+        </a>
+        <h1>CONTACTANOS</h1>
+    </div>
+
+    <!-- Espacio de separación adicional (50px) -->
+    <div style="height: 50px;"></div>
+
+    <!-- Nueva sección de información intermedia -->
+    <div class="main-section">
+        <h2>Comprometidos con la calidad y eficiencia</h2>
+        <p>En IDILSA, nos esforzamos cada día para ofrecer soluciones de lubricación que optimicen el rendimiento y la durabilidad de tus equipos. Nuestra misión es liderar la innovación en la industria, garantizando un servicio de calidad superior para cada uno de nuestros clientes.</p>
+    </div>
+
+    <!-- Sección de Historia -->
+    <div class="history-section">
+        <h2>Historia de IDILSA</h2>
+        <div class="timeline">
+            <div class="year">1998</div>
+            <div class="year">2005</div>
+            <div class="year">2010</div>
+            <div class="year">2020</div>
+        </div>
+        <div class="history-text">
+            <p><strong>1998:</strong> Fundación de IDILSA. Iniciamos con el objetivo de ofrecer soluciones innovadoras en sistemas de lubricación industrial.</p>
+            <p><strong>2005:</strong> Expansión al Bajío. Nuestra presencia en el Bajío marcó el comienzo de una expansión significativa a nivel nacional.</p>
+            <p><strong>2010:</strong> Incorporación de nueva tecnología en sistemas de lubricación. Introdujimos tecnología avanzada para mejorar la eficiencia y calidad en nuestros productos.</p>
+            <p><strong>2020:</strong> Premios de calidad. Recibimos varios premios nacionales e internacionales por la innovación y calidad de nuestros servicios.</p>
+        </div>
+    </div>
+
+    <!-- Sección de Servicios -->
+    <div class="services-section">
+        <h2>Servicios de IDILSA</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="https://i.ibb.co/4WtMRqS/3133053f-9e49-463c-a8b0-d0898fc23cad.jpg" alt="Comercializadora">
+                <h3>Comercializadora</h3>
+                <p>Distribuimos productos de alta calidad para diversas industrias.</p>
+                <a href="mailto:ventas@idilsa.com" class="cta-button">Contáctanos</a>
+            </div>
+            <div class="service-card">
+                <img src="https://i.ibb.co/PxwLp5y/2d1860af-f163-4a07-9c0d-c3a4b42d7376-1.jpg" alt="Maquinados">
+                <h3>Maquinados</h3>
+                <p>Diseño y fabricación de piezas precisas para tu maquinaria.</p>
+                <a href="mailto:ventas@idilsa.com" class="cta-button">Contáctanos</a>
+            </div>
+            <div class="service-card">
+                <img src="https://i.ibb.co/wYN2HRS/f2ac449e-bd26-49b7-98ef-94e76ae9718f.jpg" alt="Lubricación">
+                <h3>Lubricación</h3>
+                <p>Instalación y mantenimiento de sistemas de lubricación eficientes.</p>
+                <a href="mailto:ventas@idilsa.com" class="cta-button">Contáctanos</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Reconocimientos -->
+    <div class="recognitions-section">
+        <h2>Reconocimientos y Premios</h2>
+        <div class="recognitions-gallery">
+            <div class="recognition-card">
+                <img src="https://i.ibb.co/S31HrKX/Captura-de-pantalla-964.png" alt="Premio 1">
+            </div>
+            <div class="recognition-card">
+                <img src="https://i.ibb.co/bLqm9j9/2020.jpg" alt="Certificación">
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <div class="contact-section">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+            <p><strong>Oficina:</strong> 55-51144840</p>
+            <p><strong>Bajío:</strong> 47-26881722</p>
+            <p><strong>Correo:</strong> <a href="mailto:ventas@idilsa.com">ventas@idilsa.com</a>, <a href="mailto:ventasbajio@idilsa.com">ventasbajio@idilsa.com</a></p>
+            <p><strong>Dirección:</strong> Convento de San Agustin 6, Col Jardines de Santa Monica, Aguascalientes.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
